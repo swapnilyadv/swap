@@ -1,0 +1,23 @@
+.about {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 2rem;
+  color: var(--pure-white);
+}
+
+.about p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}

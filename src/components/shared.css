@@ -1,0 +1,29 @@
+.about, .projects, .contact, .footer {
+  background-color: #000000;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight {
+  color: #64ffda;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+section {
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.footer {
+  min-height: auto;
+  padding: 2rem;
+  background-color: #000000;
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
