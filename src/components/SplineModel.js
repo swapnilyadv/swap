@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './SplineModel.css';
 
 const SplineModel = () => {
   useEffect(() => {
@@ -12,11 +13,13 @@ const SplineModel = () => {
     };
   }, []);
 
+  
+
   return (
     <div className="spline-container">
       <spline-viewer 
-        url="https://prod.spline.design/fJ2ptJKzT-sDkpfO/scene.splinecode" 
-        background="rgba(218,81,221,0.2)"
+        url="https://prod.spline.design/84tOuNtQbJdjPRTu/scene.splinecode"
+        background="rgba(0, 0, 0, 0.2)"
       />
     </div>
   );
