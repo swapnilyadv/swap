@@ -3,18 +3,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--black);
-  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1rem 2rem;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-}
-
-.nav-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--accent-color);
 }
 
 .nav-links {
@@ -23,23 +15,13 @@
   align-items: center;
   gap: 3rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  max-width: 800px;
-}
-
-.nav-links li {
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
   color: var(--white);
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -47,11 +29,70 @@
 }
 
 .cv-button {
-  color: #64ffda !important;
-  border: 1px solid #64ffda;
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
   border-radius: 4px;
+  color: var(--accent) !important;
 }
 
 .cv-button:hover {
-  background-color: rgba(100, 255, 218, 0.1);
+  background: rgba(100, 255, 218, 0.1);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 16px 0;
+  }
+
+  .cv-button {
+    margin-top: 1rem;
+  }
 }
