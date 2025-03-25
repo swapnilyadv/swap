@@ -1,57 +1,37 @@
 import React from 'react';
 import './Projects.css';
 
-const projectData = [
+const projects = [
   {
-    id: 1,
     title: "Portfolio Website",
-    description: "A modern portfolio built with React and styled-components featuring dark theme and responsive design.",
-    liveDemo: "https://your-portfolio-url.com",
-    github: "https://github.com/yourusername/portfolio"
+    description: "A modern portfolio built with React and Three.js featuring interactive 3D elements and smooth animations.",
+    tech: ["React", "Three.js", "Framer Motion"],
+    github: "https://github.com/yourusername/portfolio",
+    live: "https://yourportfolio.com"
   },
-  {
-    id: 2,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce application with user authentication, payment integration, and admin dashboard.",
-    liveDemo: "https://your-ecommerce-url.com",
-    github: "https://github.com/yourusername/ecommerce"
-  },
-  {
-    id: 3,
-    title: "Task Management App",
-    description: "React-based task management application with drag-and-drop functionality and local storage.",
-    liveDemo: "https://your-taskapp-url.com",
-    github: "https://github.com/yourusername/task-manager"
-  }
+  // Add more projects here
 ];
 
 const Projects = () => {
   return (
     <section className="projects" id="projects">
       <div className="projects-content">
-        <h2>My <span className="highlight">Projects</span></h2>
-        <div className="project-grid">
-          {projectData.map(project => (
-            <div className="project-card" key={project.id}>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="project-links">
-                <a 
-                  href={project.liveDemo} 
-                  className="highlight"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
-                </a>
-                <a 
-                  href={project.github} 
-                  className="highlight"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
+        <h2><span className="highlight">&lt;</span> My Projects <span className="highlight">/&gt;</span></h2>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div className="project-card" key={index}>
+              <div className="project-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="project-tech">
+                  {project.tech.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
               </div>
             </div>
           ))}
