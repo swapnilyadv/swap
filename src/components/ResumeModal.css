@@ -1,0 +1,64 @@
+.resume-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.resume-modal {
+  background: var(--black);
+  width: 90%;
+  height: 90vh;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--accent);
+}
+
+.resume-modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-button,
+.download-button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.download-button {
+  border: 1px solid var(--accent);
+}
+
+.close-button:hover,
+.download-button:hover {
+  background: rgba(100, 255, 218, 0.1);
+}
+
+.resume-content {
+  flex: 1;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.resume-content iframe {
+  border: none;
+  background: white;
+}

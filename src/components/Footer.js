@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="social-links">
-          <a href="https://github.com" className="highlight">GitHub</a>
-          <a href="https://linkedin.com" className="highlight">LinkedIn</a>
-          <a href="https://twitter.com" className="highlight">Twitter</a>
+          <a href="https://github.com/swapnilyadv" className="highlight">GitHub</a>
+          <a href="https://www.linkedin.com/in/swapnilyadav29/" className="highlight">LinkedIn</a>
+          <a href="https://x.com/swapnilydv29" className="highlight">Twitter</a>
         </div>
         <p>© 2024 Swapnil Yadav. All rights reserved.</p>
       </div>
