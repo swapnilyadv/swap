@@ -38,9 +38,9 @@ const Navbar = () => {
           <li><a href="#projects" onClick={toggleMenu}>Projects</a></li>
           <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
           <li>
-            <a href="#" onClick={handleResumeClick} className="cv-button">
+            <button onClick={handleResumeClick} className="cv-button">
               Resume
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
