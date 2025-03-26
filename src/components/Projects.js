@@ -5,25 +5,25 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const Projects = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce application with user authentication, payment integration, and admin dashboard. Built with MERN stack and includes features like product catalog, shopping cart, and order management.",
-      tech: ["React", "Node.js", "MongoDB", "Express", "Redux"],
-      github: "https://github.com/yourusername/ecommerce",
-      live: "https://your-ecommerce.com"
+      title: "VR-Horror Game",
+      description: "Designed and developed a single-player VR horror game as a major project for my engineering degree. LeveragedC# to ensure optimal performance of game assets and components. Managed gameplay mechanics through intuitivebutton interactions, enhancing user experience.",
+      tech: ["Unity Engine", "c#", "3D Modellling", "Blender", "Assets Optimization"],
+      github: "https://github.com/Ritvikyt/DeadEndSunrise_VRHorror",
+      live: "https://deadendsunrise-vrhorror.netlify.app/"
     },
     {
-      title: "Real-time Chat Application",
-      description: "Developed a real-time chat application using WebSocket technology. Features include private messaging, group chats, and file sharing capabilities.",
-      tech: ["Socket.io", "React", "Node.js", "MongoDB"],
+      title: "Vehicle Number Plate Detection",
+      description: "Developed a machine learning system in Python to recognize vehicle number plates for traffic police, leveraging OCR and YOLO libraries for image capture and processing. Achieved 95% accuracy in number plate detection and recognition.",
+      tech: ["Python", "OpenCV", "YOLO", "OCR"],
       github: "https://github.com/yourusername/chat-app",
       live: "https://your-chat-app.com"
     },
     {
-      title: "Task Management System",
+      title: "Yadav Dental Care",
       description: "A collaborative task management system with real-time updates. Includes features like task assignment, progress tracking, and deadline management.",
-      tech: ["Spring Boot", "React", "MySQL", "AWS"],
-      github: "https://github.com/yourusername/task-manager",
-      live: "https://your-task-manager.com"
+      tech: ["Html", "CSS", "JavaScript"],
+      github: "https://github.com/swapnilyadv/yadav_dental_care",
+      live: "https://yadav-dental-care.vercel.app/"
     }
   ];
 
