@@ -7,11 +7,29 @@ const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState('');
 
+  // Email validation function
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const sendEmail = async (e) => {
     e.preventDefault();
     setStatus('sending');
-
+  
     try {
+      // Get user details from form fields
+      const userName = form.current.user_name.value;
+      const userEmail = form.current.user_email.value;
+  
+      // Check if the email is not empty
+      if (!userEmail) {
+        throw new Error("Email address is required.");
+      }
+  
+      // Validate email format
+      if (!validateEmail(userEmail)) {
+        throw new Error("Invalid email address");
+      }
+  
+      console.log("User email:", userEmail); // Log the email to verify it's captured
+  
       // First email - to portfolio owner
       const result = await emailjs.sendForm(
         'service_0oxe7yt',
@@ -19,42 +37,46 @@ const Contact = () => {
         form.current,
         'kZaso44Zu-VJBOVOi'
       );
-
+  
       if (result.text === 'OK') {
-        // Store user details before form reset
-        const userName = form.current.user_name.value;
-        const userEmail = form.current.user_email.value;
-
         // Second email - auto-reply
         const autoReplyResult = await emailjs.send(
           'service_0oxe7yt',
           'template_l7dyjbv',
           {
             to_name: userName,
-            to_email: userEmail,
+            to_email: userEmail,  // Hardcoded test email
             from_name: 'Swapnil Yadav',
             from_email: 'swapnilyadav.dude@gmail.com',
-            subject: 'Thank you for contacting me!',
-            message: `Thank you for reaching out through my portfolio website. I will get back to you soon!
-
-Best regards,
-Swapnil Yadav`
+            message: `Thank you for reaching out through my portfolio website. I will get back to you soon!`
           },
           'kZaso44Zu-VJBOVOi'
         );
-
+        
+  
+        console.log("Auto-reply result:", autoReplyResult); // Log the result to verify if it's successful
+  
+        // Check if the auto-reply was successfully sent
         if (autoReplyResult.text === 'OK') {
           setStatus('success');
           form.current.reset();
+        } else {
+          console.error("Auto-reply failed:", autoReplyResult);
+          throw new Error("Auto-reply email failed.");
         }
+      } else {
+        console.error("Initial email to portfolio owner failed:", result);
+        throw new Error("Initial email to portfolio owner failed.");
       }
     } catch (error) {
       console.error('Email Error:', error);
       setStatus('error');
     }
-
-    setTimeout(() => setStatus(''), 5000);
+  
+    // Reset status after 5 seconds
+    setTimeout(() => setStatus(''), 2000);
   };
+  
 
   return (
     <section className="contact" id="contact">
