@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -9,16 +10,19 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Header />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div className="App">
+        <Navbar />
+        <main>
+          <Header />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+      <Analytics />
+    </>
   );
 };
 
