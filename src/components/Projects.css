@@ -25,12 +25,12 @@
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   padding: 2rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out; /* Reduced from default 0.5s */
   border: 1px solid transparent;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   border-color: var(--accent);
 }
 
@@ -72,11 +72,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease-in-out;
 }
 
 .project-links a:hover {
-  color: var(--accent);
+  color: #64ffda;
 }
 
 @media (max-width: 768px) {

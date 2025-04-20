@@ -75,7 +75,7 @@
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +83,7 @@
 }
 
 .submit-btn:hover {
-  background: rgba(100, 255, 218, 0.1);
+  background-color: rgba(100, 255, 218, 0.1);
   transform: translateY(-2px);
 }
 
