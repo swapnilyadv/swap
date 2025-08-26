@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import ResumeModal from './ResumeModal';
 
 const Navbar = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+  // Removed scroll-hide logic
   const [isOpen, setIsOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
-
-      setPrevScrollPos(currentScrollPos);
-      setVisible(isVisible);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
+  // No scroll-hide effect
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -43,7 +31,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${visible ? '' : 'hidden'}`}>
+      <nav className="navbar">
         <div className="hamburger" onClick={toggleMenu}>
           <span className={`bar ${isOpen ? 'active' : ''}`}></span>
           <span className={`bar ${isOpen ? 'active' : ''}`}></span>

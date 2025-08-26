@@ -11,9 +11,7 @@
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.972);
 }
 
-.navbar.hidden {
-  transform: translateY(-100%);
-}
+
 
 .nav-links {
   display: flex;
